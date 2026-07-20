@@ -1,0 +1,26 @@
+---
+import RootLayout from "../layouts/RootLayout.astro";
+import Logo from "../assets/logo.svg";
+---
+
+<RootLayout title="Главная">
+  <Logo class="logo" />
+</RootLayout>
+
+<style>
+  :root {
+    background: black;
+    color: white;
+  }
+  body {
+    height: 100svh;
+    width: 100%;
+    display: grid;
+    flex-direction: column;
+    place-items: center;
+    margin: 0;
+  }
+  .logo {
+    width: min(20rem, 75vw);
+  }
+</style>

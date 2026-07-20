@@ -1,0 +1,14 @@
+# Environment
+env*
+dist/
+.astro/
+node_modules/
+.DS_Store/
+.idea/
+.vscode/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
