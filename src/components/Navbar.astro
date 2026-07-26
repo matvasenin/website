@@ -1,0 +1,54 @@
+---
+import Separator from "./Separator.astro";
+import IconHome from "~icons/solar/home-angle-bold"
+import IconChat from "~icons/solar/chat-round-line-bold"
+import IconDocument from "~icons/solar/document-text-bold"
+
+const checkPath = (path: string) =>
+  Astro.url.pathname.replaceAll(/(\w)\//g, "$1") === path ? "tm-active" : ""
+---
+
+<div class="tm-navbar">
+  <a href="/" class={checkPath("/")}>
+    <IconHome />
+    главная
+  </a>
+  <Separator class="tm-vertical" />
+  <a href="/contact" class={checkPath("/contact")}>
+    <IconChat />
+    контакты
+  </a>
+  <Separator class="tm-vertical" />
+  <a href="/blog" class={checkPath("/blog")}>
+    <IconDocument />
+    блог
+  </a>
+</div>
+
+<style>
+  .tm-navbar {
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    height: 100%;
+    background: var(--color-navbar);
+    padding: 0.75rem 1rem;
+    backdrop-filter: blur(16px);
+    margin-bottom: 1rem;
+    @media (min-width: 40rem) {
+      width: fit-content;
+      margin-inline: auto;
+      border-radius: 0 0 1rem 1rem;
+    }
+    & > a {
+      display: flex;
+      gap: 0.5rem;
+      font-size: 1.5rem;
+      &:not(.tm-active, :hover) {
+        color: var(--color-secondary-text);
+      }
+    }
+  }
+</style>
