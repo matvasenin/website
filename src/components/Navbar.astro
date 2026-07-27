@@ -39,7 +39,7 @@ const checkPath = (path: string) =>
     background: var(--color-navbar);
     backdrop-filter: blur(16px);
     border-radius: 0 0 1rem 1rem;
-    & > a {
+    & a {
       display: flex;
       gap: 0.5rem;
       font-size: 1.5rem;
@@ -47,8 +47,8 @@ const checkPath = (path: string) =>
       &:not(.tm-active, :hover) {
         color: var(--color-secondary-text);
       }
-      @media (max-width: 30rem) {
-        & > span {
+      @media (max-width: 40rem) {
+        & span {
           display: none;
         }
       }
