@@ -35,7 +35,7 @@ import IconVK from "~icons/simple-icons/vk"
 <style>
   a {
     display: flex;
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 3vw, 3rem);
     font-weight: 700;
   }
   svg {
@@ -57,7 +57,7 @@ import IconVK from "~icons/simple-icons/vk"
       flex-direction: column;
     }
     & label {
-      font-size: 1.5rem;
+      font-size: clamp(1.5rem, 2vw, 2rem);
       font-weight: 400;
       color: var(--color-secondary-text);
     }
