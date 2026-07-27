@@ -5,28 +5,28 @@ import IconChat from "~icons/solar/chat-round-line-bold"
 import IconDocument from "~icons/solar/document-text-bold"
 
 const checkPath = (path: string) =>
-  Astro.url.pathname.replaceAll(/(\w)\//g, "$1") === path ? "tm-active" : ""
+  Astro.url.pathname.replaceAll(/(\w)\//g, "$1") === path ? "active" : ""
 ---
 
-<div class="tm-navbar">
+<nav>
   <a href="/" class={checkPath("/")}>
     <IconHome />
     <span>главная</span>
   </a>
-  <Separator class="tm-vertical" />
+  <Separator class="vertical" />
   <a href="/contact" class={checkPath("/contact")}>
     <IconChat />
     <span>контакты</span>
   </a>
-  <Separator class="tm-vertical" />
+  <Separator class="vertical" />
   <a href="/blog" class={checkPath("/blog")}>
     <IconDocument />
     <span>блог</span>
   </a>
-</div>
+</nav>
 
 <style>
-  .tm-navbar {
+  nav {
     position: sticky;
     top: 0;
     display: flex;
@@ -34,7 +34,7 @@ const checkPath = (path: string) =>
     gap: 0.75rem;
     height: 100%;
     width: fit-content;
-    margin: 0 auto 1rem;
+    margin-inline: auto;
     padding: 0.75rem 1rem;
     background: var(--color-navbar);
     backdrop-filter: blur(16px);
@@ -44,7 +44,7 @@ const checkPath = (path: string) =>
       gap: 0.5rem;
       font-size: 1.5rem;
       transition: color .2s;
-      &:not(.tm-active, :hover) {
+      &:not(.active, :hover) {
         color: var(--color-secondary-text);
       }
       @media (max-width: 40rem) {
