@@ -1,8 +1,5 @@
 ---
-import "../styles/theme.css";
-import "../styles/global.css";
 import "@fontsource-variable/inter/wght.css"
-import Navbar from "../components/Navbar.astro";
 import type { HTMLAttributes } from "astro/types";
 
 interface Props extends HTMLAttributes<"body"> {
@@ -19,22 +16,9 @@ const { title, ...rest } = Astro.props;
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title} | MV</title>
+		<title>{title}</title>
 	</head>
 	<body {...rest}>
-    <Navbar />
-		<slot />
+    <slot />
 	</body>
 </html>
-
-<style>
-  :root {
-    font-family: "Inter Variable", system-ui;
-    font-weight: 400;
-    background: var(--color-page);
-    color: var(--color-text);
-  }
-  body {
-    margin: 0;
-  }
-</style>

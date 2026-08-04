@@ -1,1 +1,12 @@
-<svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><rect width="512" height="512" stroke-width="10"/><path d="m88 160v192h48v-124.12l48 48 48-48v124.12h48v-144l48 48v-96h-96l-48 48-48-48zm240 96v96h96v-192h-48v144z" fill="#fff" stroke-width="0"/></svg>
+<svg width="32" height="32" version="1.1" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <rect width="32" height="32" rx="4"/>
+  <path d="m6 6v20h4v-12h4v-4h-4v-4zm8 8v4h4v-4zm4 0h4v12h4v-20h-4v4h-4z"/>
+  <style>
+    rect { fill: #2f2f2f }
+    path { fill: #fff }
+    @media (prefers-color-scheme: dark) {
+      rect { fill: #fff }
+      path { fill: #2f2f2f }
+    }
+  </style>
+</svg>
