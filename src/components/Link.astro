@@ -1,0 +1,24 @@
+---
+import IconArrowRight from "~icons/solar/arrow-right-linear"
+import IconArrowDown from "~icons/solar/arrow-down-linear"
+import type { HTMLAttributes } from "astro/types"
+import "@/styles/button.css";
+import "@/styles/stack.css";
+
+interface Props extends HTMLAttributes<"a"> {
+  kind?: "internal" | "external";
+  label: string;
+}
+const { kind = "external", label, ...rest } = Astro.props;
+---
+
+<a class="button" {...rest}>
+  <div class="button-content">
+    { label }
+    {
+      kind === "internal"
+        ? <IconArrowDown />
+        : <IconArrowRight />
+    }
+  </div>
+</a>

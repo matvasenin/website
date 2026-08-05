@@ -1,0 +1,6 @@
+.stack-x > *:not(:last-child) {
+  margin-inline: 0 calc(-1 * var(--border-width));
+}
+.stack-y > *:not(:last-child) {
+  margin-block: 0 calc(-1 * var(--border-width));
+}

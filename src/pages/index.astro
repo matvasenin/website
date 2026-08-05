@@ -1,5 +1,23 @@
 ---
-import Root from "../layouts/Root.astro";
+import Card from "@/components/Card.astro";
+import Root from "@/layouts/Root.astro";
+
+import SectionBoard from "@/layouts/sections/Board.astro";
+import SectionHards from "@/layouts/sections/Hards.astro";
+import SectionSofts from "@/layouts/sections/Softs.astro";
 ---
 
-<Root title="Главная" />
+<Root title="Главная">
+  <SectionBoard />
+  <Card id="heading-hardskills">
+    <h2>Хард-скиллы</h2>
+  </Card>
+  <SectionHards />
+  <Card id="heading-softskills">
+    <h2>Софт-скиллы</h2>
+  </Card>
+  <SectionSofts />
+  <Card id="heading-contacts">
+    <h2>Контакты</h2>
+  </Card>
+</Root>

@@ -2,7 +2,7 @@
 import "@fontsource-variable/inter/wght.css"
 import type { HTMLAttributes } from "astro/types";
 
-interface Props extends HTMLAttributes<"body"> {
+interface Props extends HTMLAttributes<"main"> {
   title: string;
 }
 const { title, ...rest } = Astro.props;
@@ -17,7 +17,52 @@ const { title, ...rest } = Astro.props;
 		<meta name="viewport" content="width=device-width" />
 		<title>{title}</title>
 	</head>
-	<body {...rest}>
-    <slot />
+	<body>
+		<main {...rest}>
+			<slot />
+		</main>
 	</body>
 </html>
+
+<style>
+	body {
+		margin: 0;
+	}
+	main {
+		font-family: "Inter Variable";
+	}
+</style>
+
+<style is:global>
+	:root {
+		--color-paper: white;
+		--color-primary: hsl(0, 0%, 25%);
+		--color-primary-hover: hsl(0, 0%, 28%);
+		--color-accent: hsl(215, 100%, 65%);
+		--color-accent-hover: hsl(210, 100%, 45%);
+		--border-width: 3px;
+		color: var(--color-primary);
+		background: var(--color-paper);
+		scroll-behavior: smooth;
+		text-wrap: balance;
+	}
+	* {
+		margin: 0;
+		font-size: clamp(1.375rem, 5vw, 1.5rem);
+		&:is(h1) {
+			font-size: clamp(3rem, 15vw, 4rem);
+			line-height: 1;
+		}
+		&:is(h2) {
+			font-size: clamp(2rem, 10vw, 3rem);
+			line-height: 1;
+		}
+		&::selection {
+			background: var(--color-primary);
+			color: var(--color-paper);
+		}
+		&:is(a, a:visited) {
+			color: inherit;
+		}
+	}
+</style>

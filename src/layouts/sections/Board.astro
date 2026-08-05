@@ -1,0 +1,50 @@
+---
+import Section from "@/components/Section.astro";
+import Card from "@/components/Card.astro";
+import Link from "@/components/Link.astro";
+import AnimatedWater from "@/assets/images/1-water-slow.gif";
+---
+
+<Section src={AnimatedWater} alt="...">
+  <div class="widget-profiler stack-y">
+    <Card color="paper">
+      <h1>Vasenin</h1>
+    </Card>
+    <Card color="accent" style="text-align: center">
+      junior-специалист в&nbsp;области ИБ
+    </Card>
+    <Card color="paper" style="text-align: end">
+      <h1>Matvey</h1>
+    </Card>
+    <Card color="primary" style="text-align: start">
+      Эффективность и&nbsp;обучаемость&nbsp;— мои приоритеты
+    </Card>
+  </div>
+  <div class="widget-navigator">
+    <Link href="#heading-hardskills" label="Обо мне" kind="internal" />
+    <Link href="#heading-contacts" label="Контакты" kind="internal" />
+    <Link href="/blog" label="Блог" kind="external" />
+  </div>
+</Section>
+
+<style is:global>
+  .widget-profiler {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 1rem auto;
+  }
+  .widget-navigator {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    padding: 1rem;
+    box-sizing: border-box;
+    @media (min-width: 60rem) {
+      flex-direction: row;
+      & > * {
+        flex: 1;
+      }
+    }
+  }
+</style>
