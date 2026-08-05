@@ -1,5 +1,5 @@
 ---
-import Card from "@/components/Card.astro";
+import Header from "@/components/Header.astro";
 import Root from "@/layouts/Root.astro";
 
 import SectionBoard from "@/layouts/sections/Board.astro";
@@ -9,15 +9,15 @@ import SectionSofts from "@/layouts/sections/Softs.astro";
 
 <Root title="Главная">
   <SectionBoard />
-  <Card id="heading-hard-skills">
+  <Header id="heading-hard-skills">
     <h2>Хард-скиллы</h2>
-  </Card>
+  </Header>
   <SectionHards />
-  <Card id="heading-soft-skills">
+  <Header id="heading-soft-skills">
     <h2>Софт-скиллы</h2>
-  </Card>
+  </Header>
   <SectionSofts />
-  <Card id="heading-contacts">
+  <Header id="heading-contacts">
     <h2>Контакты</h2>
-  </Card>
+  </Header>
 </Root>

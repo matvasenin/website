@@ -1,0 +1,17 @@
+---
+import type { HTMLAttributes } from 'astro/types'
+
+type Props = HTMLAttributes<"div">
+const props = Astro.props;
+---
+
+<div class:list={["header", props.class]} {...props}>
+  <slot />
+</div>
+
+<style is:global>
+  .header {
+    border-block: var(--border-width) solid var(--color-primary);
+    padding: 1rem;
+  }
+</style>
