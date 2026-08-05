@@ -1,6 +1,5 @@
 ---
 import type { HTMLAttributes } from "astro/types"
-import "@/styles/stack.css";
 
 interface Props extends HTMLAttributes<"article"> {
   color?: "paper" | "primary" | "accent";
@@ -14,10 +13,10 @@ const { color, ...rest } = Astro.props;
 
 <style is:global>
   .card {
+    margin: calc(-0.5 * var(--border-width));
     border: var(--border-width) solid var(--color-primary);
     box-sizing: border-box;
     padding: 1rem;
-    /* COLORS */
     &.paper {
       background: var(--color-paper);
       color: var(--color-primary);
