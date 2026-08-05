@@ -5,7 +5,7 @@ import Link from "@/components/Link.astro";
 import AnimatedWater from "@/assets/images/1-water-slow.gif";
 ---
 
-<Section src={AnimatedWater} alt="...">
+<Section image={AnimatedWater}>
   <div class="widget-profiler">
     <Card color="paper">
       <h1>Vasenin</h1>
@@ -31,14 +31,17 @@ import AnimatedWater from "@/assets/images/1-water-slow.gif";
   .widget-profiler {
     display: flex;
     flex-direction: column;
-    margin: 1rem 1rem auto;
+    margin-bottom: auto;
+    @media (min-width: 65rem) {
+      max-width: 40rem;
+      margin-block: auto;
+    }
   }
   .widget-navigator {
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: .5rem;
-    padding: 1rem;
     box-sizing: border-box;
     @media (min-width: 60rem) {
       flex-direction: row;

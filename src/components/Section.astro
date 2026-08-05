@@ -1,36 +1,32 @@
 ---
 import type { HTMLAttributes } from 'astro/types';
-import { Image } from 'astro:assets';
 
 interface Props extends HTMLAttributes<"section"> {
-  src: ImageMetadata;
-  alt: string;
+  image: ImageMetadata;
 }
-const { src, alt, ...rest } = Astro.props;
+const { image, ...rest } = Astro.props;
 ---
 
-<section class:list={["section", rest.class]} {...rest}>
-  <Image class="section-image" src={src} alt={alt} />
+<section
+  style={`background-image: linear-gradient(rgb(255 255 255 / 0.75), rgb(255 255 255 / 0.75)), url("${image.src}")`}
+  {...rest}
+>
   <slot />
 </section>
 
 <style is:global>
-  .section {
+  section {
     display: flex;
     flex-direction: column;
+    align-items: center;
     min-height: 100svh;
     position: relative;
     overflow-x: hidden;
-  }
-  .section-image {
-    position: absolute;
-    left: 50%;
-    translate: -50%;
-    height: 100%;
-    width: auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     image-rendering: pixelated;
-    opacity: 0.25;
-    pointer-events: none;
-    z-index: -999;
+    padding: 1rem;
+    box-sizing: border-box;
   }
 </style>
