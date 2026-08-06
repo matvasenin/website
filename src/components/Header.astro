@@ -11,7 +11,10 @@ const props = Astro.props;
 
 <style is:global>
   .header {
-    border-block: var(--border-width) solid var(--color-primary);
     padding: 1rem;
+    border-block: var(--border-width) solid var(--color-primary);
+    @media (max-width: 35rem) {
+      text-align: center;
+    }
   }
 </style>
