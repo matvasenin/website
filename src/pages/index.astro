@@ -1,5 +1,4 @@
 ---
-import Header from "@/components/Header.astro";
 import Root from "@/layouts/Root.astro";
 
 import SectionBoard from "@/layouts/sections/Board.astro";
@@ -10,16 +9,7 @@ import SectionContacts from "@/layouts/sections/Contacts.astro";
 
 <Root title="Главная">
   <SectionBoard />
-  <Header id="heading-hard-skills">
-    <h2>Хард-скиллы</h2>
-  </Header>
   <SectionHardSkills />
-  <Header id="heading-soft-skills">
-    <h2>Софт-скиллы</h2>
-  </Header>
   <SectionSoftSkills />
-  <Header id="heading-contacts">
-    <h2>Контакты</h2>
-  </Header>
   <SectionContacts />
 </Root>
