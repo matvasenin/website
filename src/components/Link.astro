@@ -2,7 +2,6 @@
 import IconArrowRight from "~icons/solar/arrow-right-linear"
 import IconArrowDown from "~icons/solar/arrow-down-linear"
 import type { HTMLAttributes } from "astro/types"
-import "@/styles/button.css";
 
 interface Props extends HTMLAttributes<"a"> {
   kind?: "internal" | "external";
@@ -11,8 +10,8 @@ interface Props extends HTMLAttributes<"a"> {
 const { kind = "external", label, ...rest } = Astro.props;
 ---
 
-<a class="button" {...rest}>
-  <div class="button-content">
+<a class="link" {...rest}>
+  <div class="link-content">
     { label }
     {
       kind === "internal"
@@ -21,3 +20,47 @@ const { kind = "external", label, ...rest } = Astro.props;
     }
   </div>
 </a>
+
+<style is:global>
+  .link {
+    display: flex;
+    height: 4rem;
+    text-decoration: none;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      height: 3rem;
+      width: 100%;
+      background: white;
+      box-sizing: border-box;
+      border: var(--border-width) solid var(--color-primary);
+    }
+    &:active > .link-content {
+      translate: 0 0.75rem;
+    }
+  }
+  .link-content {
+    display: flex;
+    width: 100%;
+    height: 3.25rem;
+    padding-inline: 0.75rem;
+    justify-content: space-between;
+    border: var(--border-width) solid var(--color-primary);
+    box-sizing: border-box;
+    align-items: center;
+    background: var(--color-paper);
+    transition: .1s;
+    z-index: 10;
+    &:hover {
+      background: var(--color-accent);
+      color: var(--color-paper);
+    }
+    & path {
+      stroke-width: calc(
+        var(--border-width) / 2
+      );
+    }
+  }
+</style>
