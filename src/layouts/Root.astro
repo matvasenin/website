@@ -1,5 +1,6 @@
 ---
 import "@fontsource-variable/inter/wght.css"
+import "@fontsource-variable/jetbrains-mono/wght.css";
 import type { HTMLAttributes } from "astro/types";
 
 interface Props extends HTMLAttributes<"main"> {
@@ -40,22 +41,23 @@ const { title, ...rest } = Astro.props;
 	body {
 		margin: 0;
 	}
-	main {
-		font-family: "Inter Variable";
-	}
 	* {
 		margin: 0;
 		&, &::before, &::after {
 			box-sizing: border-box;
 		}
-		font-size: clamp(1.25rem, 5vw, 1.5rem);
+		font:
+			600 clamp(1.25rem, 5vw, 1.5rem)/1.25
+			"JetBrains Mono Variable", system-ui;
 		&:is(h1) {
-			font-size: clamp(3rem, 15vw, 4rem);
-			line-height: 1;
+			font:
+				700 clamp(3rem, 15vw, 4rem)/1
+				"Inter Variable", system-ui;
 		}
 		&:is(h2) {
-			font-size: clamp(2rem, 10vw, 3rem);
-			line-height: 1;
+			font:
+				700 clamp(2rem, 10vw, 3rem)/1
+				"Inter Variable", system-ui;
 		}
 		&::selection {
 			background: var(--color-primary);
