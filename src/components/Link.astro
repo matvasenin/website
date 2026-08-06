@@ -3,18 +3,15 @@ import IconArrowRight from "~icons/solar/arrow-right-linear"
 import IconArrowDown from "~icons/solar/arrow-down-linear"
 import type { HTMLAttributes } from "astro/types"
 
-interface Props extends HTMLAttributes<"a"> {
-  kind?: "internal" | "external";
-  label: string;
-}
-const { kind = "external", label, ...rest } = Astro.props;
+type Props = HTMLAttributes<"a">
+const props = Astro.props;
 ---
 
-<a class="link" {...rest}>
+<a class="link" {...props}>
   <div>
-    { label }
+    <slot />
     {
-      kind === "internal"
+      props.href?.toString().startsWith("#")
         ? <IconArrowDown />
         : <IconArrowRight />
     }
