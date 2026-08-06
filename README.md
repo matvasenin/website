@@ -1,5 +1,5 @@
 <p align=center>
-  <img src="public/favicon.svg" width="120" />
+  <img src="public/favicon.svg" width="128" />
 </p>
 <h1 align=center>MV.Web</h1>
 <p align=center>Мой личный веб-сайт</p>
