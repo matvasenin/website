@@ -24,15 +24,6 @@ const { title, ...rest } = Astro.props;
 	</body>
 </html>
 
-<style>
-	body {
-		margin: 0;
-	}
-	main {
-		font-family: "Inter Variable";
-	}
-</style>
-
 <style is:global>
 	:root {
 		--color-paper: white;
@@ -46,8 +37,17 @@ const { title, ...rest } = Astro.props;
 		scroll-behavior: smooth;
 		text-wrap: balance;
 	}
+	body {
+		margin: 0;
+	}
+	main {
+		font-family: "Inter Variable";
+	}
 	* {
 		margin: 0;
+		&, &::before, &::after {
+			box-sizing: border-box;
+		}
 		font-size: clamp(1.25rem, 5vw, 1.5rem);
 		&:is(h1) {
 			font-size: clamp(3rem, 15vw, 4rem);
