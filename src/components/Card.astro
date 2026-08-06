@@ -13,7 +13,6 @@ const { color, ...rest } = Astro.props;
 
 <style is:global>
   .card {
-    margin: calc(-0.5 * var(--border-width));
     border: var(--border-width) solid var(--color-primary);
     box-sizing: border-box;
     padding: 1rem;
@@ -33,5 +32,11 @@ const { color, ...rest } = Astro.props;
       background: var(--color-accent);
       color: var(--color-paper);
     }
+  }
+  .card-stack-x > *:not(:last-child) {
+    margin-inline: 0 calc(-1 * var(--border-width));
+  }
+  .card-stack-y > *:not(:last-child) {
+    margin-block: 0 calc(-1 * var(--border-width));
   }
 </style>
