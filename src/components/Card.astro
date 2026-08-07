@@ -4,16 +4,17 @@ import type { HTMLAttributes } from "astro/types"
 interface Props extends HTMLAttributes<"article"> {
   color?: "paper" | "primary" | "accent";
 }
-const { color, ...rest } = Astro.props;
+const { color = "paper", ...rest } = Astro.props;
 ---
 
-<article class:list={["card", color, rest.class]} {...rest}>
+<div class:list={["card", color, rest.class]} {...rest}>
   <slot />
-</article>
+</div>
 
 <style is:global>
   .card {
-    border: var(--border-width) solid var(--color-primary);
+    outline: var(--border-width) solid var(--color-primary);
+    margin: var(--border-width);
     padding: 1rem;
     &.paper {
       background: var(--color-paper);
@@ -28,10 +29,22 @@ const { color, ...rest } = Astro.props;
       color: var(--color-accent-content);
     }
   }
-  .card-stack-x > *:not(:last-child) {
-    margin-inline: 0 calc(-1 * var(--border-width));
+  .stack-x > .card {
+    margin-inline: calc(var(--border-width) / 2);
+    &:first-child {
+      margin-inline-start: var(--border-width);
+    }
+    &:last-child {
+      margin-inline-end: var(--border-width);
+    }
   }
-  .card-stack-y > *:not(:last-child) {
-    margin-block: 0 calc(-1 * var(--border-width));
+  .stack-y > .card {
+    margin-block: calc(var(--border-width) / 2);
+    &:first-child {
+      margin-block-start: var(--border-width);
+    }
+    &:last-child {
+      margin-block-end: var(--border-width);
+    }
   }
 </style>
