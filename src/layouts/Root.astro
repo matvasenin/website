@@ -29,9 +29,8 @@ const { title, ...rest } = Astro.props;
 	:root {
 		--color-paper: white;
 		--color-primary: hsl(0, 0%, 25%);
-		--color-primary-hover: hsl(0, 0%, 28%);
 		--color-accent: hsl(215, 100%, 65%);
-		--color-accent-hover: hsl(210, 100%, 45%);
+		--color-accent-content: white;
 		--border-width: 3px;
 		color: var(--color-primary);
 		background: var(--color-paper);
@@ -60,9 +59,16 @@ const { title, ...rest } = Astro.props;
 			background: var(--color-primary);
 			color: var(--color-paper);
 		}
+		&.primary::selection {
+      background: var(--color-primary-content);
+      color: var(--color-primary);
+    }
 		&:is(a, a:visited) {
 			color: inherit;
 		}
 		-webkit-tap-highlight-color: transparent;
+		&:focus-visible {
+			outline: 0;
+		}
 	}
 </style>

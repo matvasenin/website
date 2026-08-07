@@ -22,14 +22,10 @@ const { color, ...rest } = Astro.props;
     &.primary {
       background: var(--color-primary);
       color: var(--color-paper);
-      &::selection {
-        background: var(--color-paper);
-        color: var(--color-primary);
-      }
     }
     &.accent {
       background: var(--color-accent);
-      color: var(--color-paper);
+      color: var(--color-accent-content);
     }
   }
   .card-stack-x > *:not(:last-child) {

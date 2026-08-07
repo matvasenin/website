@@ -30,7 +30,7 @@ const props = Astro.props;
       bottom: 0;
       height: 3rem;
       width: 100%;
-      background: white;
+      background: var(--color-paper);
       border: var(--border-width) solid var(--color-primary);
     }
     &::before, & > div {
@@ -39,10 +39,10 @@ const props = Astro.props;
     &:active > div {
       translate: 0 0.75rem;
     }
-    &:hover {
+    &:hover, &:focus-visible {
       & > div {
         background: var(--color-accent);
-        color: var(--color-paper);
+        color: var(--color-accent-content);
       }
       &::before {
         background: var(--color-primary);
