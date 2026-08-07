@@ -21,20 +21,31 @@ const props = Astro.props;
 <style is:global>
   .link {
     display: flex;
-    height: 4rem;
-    text-decoration: none;
     position: relative;
+    height: 4rem;
+    width: 100%;
+    margin: var(--border-width);
+    text-decoration: none;
     &::before {
       content: "";
       position: absolute;
-      bottom: 0;
+      inset: auto 0 0;
       height: 3rem;
-      width: 100%;
-      background: var(--color-paper);
-      border: var(--border-width) solid var(--color-primary);
     }
     &::before, & > div {
+      background: var(--color-paper);
+      outline: var(--border-width) solid var(--color-primary);
       transition: .1s;
+    }
+    & > div {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      height: 3.25rem;
+      padding-inline: 0.75rem;
+      background: var(--color-paper);
+      position: relative;
     }
     &:active > div {
       translate: 0 0.75rem;
@@ -51,16 +62,5 @@ const props = Astro.props;
     & path {
       stroke-width: calc(var(--border-width) / 2);
     }
-  }
-  .link > div {
-    display: flex;
-    width: 100%;
-    height: 3.25rem;
-    padding-inline: 0.75rem;
-    justify-content: space-between;
-    border: var(--border-width) solid var(--color-primary);
-    align-items: center;
-    background: var(--color-paper);
-    z-index: 10;
   }
 </style>
