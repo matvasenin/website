@@ -8,14 +8,14 @@ const props = Astro.props;
 ---
 
 <a class="link" {...props}>
-  <div>
+  <span>
     <slot />
     {
       props.href?.toString().startsWith("#")
         ? <IconArrowDown />
         : <IconArrowRight />
     }
-  </div>
+  </span>
 </a>
 
 <style is:global>
@@ -32,12 +32,12 @@ const props = Astro.props;
       inset: auto 0 0;
       height: 3rem;
     }
-    &::before, & > div {
+    &::before, & > span {
       background: var(--color-paper);
       outline: var(--border-width) solid var(--color-primary);
       transition: .1s;
     }
-    & > div {
+    & > span {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -47,11 +47,11 @@ const props = Astro.props;
       background: var(--color-paper);
       position: relative;
     }
-    &:active > div {
+    &:active > span {
       translate: 0 0.75rem;
     }
     &:hover, &:focus-visible {
-      & > div {
+      & > span {
         background: var(--color-accent);
         color: var(--color-accent-content);
       }
